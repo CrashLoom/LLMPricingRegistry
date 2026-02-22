@@ -6,6 +6,5 @@ __pycache__/
 .git/
 .github/
 tests/
-*.md
 .gitignore
 firebase-debug.log

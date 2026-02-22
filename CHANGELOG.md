@@ -7,13 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.1.0 (2026-02-22)
 
-
-### Bug Fixes
-
-* ensure ci working properly ([#1](https://github.com/CrashLoom/LLMPricingRegistry/issues/1)) ([3a37139](https://github.com/CrashLoom/LLMPricingRegistry/commit/3a37139701a2cdf72948206a4c6ea3a22cf7f8ab))
-
-## [Unreleased]
-
 ### Added
 
 - Initial pricing registry with 9 providers (OpenAI, Anthropic, Google, DeepSeek, xAI, Groq, Kimi, OpenRouter, AWS Bedrock)
@@ -32,9 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 1MB request body limit middleware
 - Structured JSON logging
 
-### Fixed
+### Bug Fixes
 
-- Fixed GitHub Actions test failures where `pytest` was missing in CI environments.
-- Updated Docker publish metadata tagging to always publish a `latest` image tag alongside semver tags.
-
-[Unreleased]: https://github.com/CrashLoom/LLMPricingRegistry/commits/HEAD
+* ensure ci working properly ([#1](https://github.com/CrashLoom/LLMPricingRegistry/issues/1)) ([3a37139](https://github.com/CrashLoom/LLMPricingRegistry/commit/3a37139701a2cdf72948206a4c6ea3a22cf7f8ab))
