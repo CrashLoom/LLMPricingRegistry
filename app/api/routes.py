@@ -132,7 +132,6 @@ def estimate(payload: EstimateRequest, request: Request) -> EstimateResponse:
         usage=payload.usage,
         mode=payload.options.mode,
         pricing_version=payload.options.pricing_version,
-        currency=payload.options.currency,
         override_ratecard=_to_override_ratecard(payload),
     )
 
@@ -160,7 +159,6 @@ def estimate_batch(
                 usage=item.usage,
                 mode=item.options.mode,
                 pricing_version=item.options.pricing_version,
-                currency=item.options.currency,
                 override_ratecard=_to_override_ratecard(item),
             )
         except PricingError as exc:

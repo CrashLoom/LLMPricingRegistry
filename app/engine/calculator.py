@@ -63,12 +63,10 @@ class BillingEngine:
         usage: dict[str, int],
         mode: str = "strict",
         pricing_version: str = "latest",
-        currency: str = "USD",
         override_ratecard: OverrideRatecard | None = None,
     ) -> EstimateResult:
         """Estimate cost for a provider/model usage payload."""
         self._validate_pricing_version(pricing_version)
-        self._validate_currency(currency)
         self._validate_mode(mode)
         self._validate_usage(usage)
 
@@ -228,15 +226,6 @@ class BillingEngine:
             "PRICING_VERSION_NOT_FOUND",
             "Pricing version not found",
             details={"pricing_version": pricing_version},
-        )
-
-    def _validate_currency(self, currency: str) -> None:
-        if currency == self._repository.currency:
-            return
-        raise PricingError(
-            "INVALID_REQUEST",
-            f"Currency must be {self._repository.currency}",
-            details={"currency": currency},
         )
 
     @staticmethod
