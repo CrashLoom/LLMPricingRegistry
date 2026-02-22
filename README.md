@@ -31,8 +31,8 @@ docker run -p 8080:8080 llm-pricing-registry
 Or pull the published image:
 
 ```bash
-docker pull ghcr.io/YOUR_ORG/llmpricingregistry:latest
-docker run -p 8080:8080 ghcr.io/YOUR_ORG/llmpricingregistry:latest
+docker pull ghcr.io/crashloom/llmpricingregistry:latest
+docker run -p 8080:8080 ghcr.io/crashloom/llmpricingregistry:latest
 ```
 
 ## API
@@ -58,8 +58,18 @@ curl -X POST http://localhost:8080/v1/estimate \
   "provider": "openai",
   "model": "gpt-4.1-mini",
   "breakdown": [
-    { "dimension": "input_tokens_uncached", "quantity": 1000000, "rate": "0.8000", "cost": "0.800000" },
-    { "dimension": "output_tokens",         "quantity":  500000, "rate": "3.2000", "cost": "1.600000" }
+    {
+      "dimension": "input_tokens_uncached",
+      "quantity": 1000000,
+      "rate": "0.8000",
+      "cost": "0.800000"
+    },
+    {
+      "dimension": "output_tokens",
+      "quantity": 500000,
+      "rate": "3.2000",
+      "cost": "1.600000"
+    }
   ],
   "total": { "currency": "USD", "cost": "2.400000" },
   "warnings": [],
@@ -69,13 +79,13 @@ curl -X POST http://localhost:8080/v1/estimate \
 
 ### Endpoints
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `POST` | `/v1/estimate` | Single cost estimate |
-| `POST` | `/v1/estimate/batch` | Up to 100 estimates, partial success |
-| `GET`  | `/v1/providers` | List providers and capabilities |
-| `GET`  | `/v1/models?provider=openai&include_rates=true` | List models with optional rates |
-| `GET`  | `/v1/versions` | Current pricing version |
+| Method | Path                                            | Description                          |
+| ------ | ----------------------------------------------- | ------------------------------------ |
+| `POST` | `/v1/estimate`                                  | Single cost estimate                 |
+| `POST` | `/v1/estimate/batch`                            | Up to 100 estimates, partial success |
+| `GET`  | `/v1/providers`                                 | List providers and capabilities      |
+| `GET`  | `/v1/models?provider=openai&include_rates=true` | List models with optional rates      |
+| `GET`  | `/v1/versions`                                  | Current pricing version              |
 
 ### Override rates
 
@@ -124,6 +134,7 @@ uv run pytest tests/ -v
 3. Push a tag: `git tag v0.2.0 && git push origin v0.2.0`
 
 GitHub Actions will:
+
 - Run tests
 - Verify the changelog entry exists
 - Bump the version in `pyproject.toml`
