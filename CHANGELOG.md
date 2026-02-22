@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.1.2...v0.2.0) (2026-02-22)
+
+
+### Features
+
+* add dimension for pricing model ([#7](https://github.com/CrashLoom/LLMPricingRegistry/issues/7)) ([2f2604f](https://github.com/CrashLoom/LLMPricingRegistry/commit/2f2604f4a866863a782d614f09558d3e506f3002))
+
 ## [0.1.2](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.1.1...v0.1.2) (2026-02-22)
 
 
