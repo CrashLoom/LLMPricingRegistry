@@ -15,8 +15,10 @@ from app.api.schemas import (
     EstimateRequest,
     EstimateResponse,
     HealthResponse,
+    ModelDetailResponse,
     ModelsResponse,
     ModelSummary,
+    PricingTierResponse,
     ProvidersResponse,
     ProviderSummary,
     TotalCost,
@@ -255,6 +257,43 @@ def list_models(
         pricing_version=repository.pricing_version,
         provider=provider,
         models=models,
+    )
+
+
+@router.get("/models/{provider}/{model}", response_model=ModelDetailResponse)
+def get_model(
+    provider: str, model: str, request: Request
+) -> ModelDetailResponse:
+    """Return full pricing details for a single model."""
+    repository = _get_repository(request)
+    model_data = repository.get_model(provider, model)
+    if model_data is None:
+        raise PricingError(
+            "MODEL_NOT_FOUND",
+            "Model not found",
+            details={"provider": provider, "model": model},
+        )
+
+    tiers = [
+        PricingTierResponse(
+            condition={
+                "dimension": t.condition.dimension,
+                "gt": t.condition.gt,
+            },
+            billable=repository.serialize_billable(t.billable),
+        )
+        for t in model_data.pricing_tiers
+    ]
+
+    return ModelDetailResponse(
+        pricing_version=repository.pricing_version,
+        provider=repository.resolve_provider(provider),
+        model=model_data.model,
+        effective_from=model_data.effective_from,
+        capabilities=list(model_data.capabilities),
+        metadata=model_data.metadata or None,
+        billable=repository.serialize_billable(model_data.billable),
+        pricing_tiers=tiers,
     )
 
 

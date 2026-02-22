@@ -220,6 +220,39 @@ def test_internal_error_does_not_leak_details() -> None:
         assert "reason" not in payload["error"].get("details", {})
 
 
+def test_model_detail_endpoint() -> None:
+    """Return full model details for a valid provider/model pair."""
+    response = client.get("/v1/models/openai/gpt-4.1-mini")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["provider"] == "openai"
+    assert payload["model"] == "gpt-4.1-mini"
+    assert "billable" in payload
+    assert "capabilities" in payload
+    assert "pricing_tiers" in payload
+    assert isinstance(payload["pricing_tiers"], list)
+
+
+def test_model_detail_endpoint_not_found() -> None:
+    """Return MODEL_NOT_FOUND for unknown model."""
+    response = client.get("/v1/models/openai/does-not-exist")
+
+    assert response.status_code == 400
+    payload = response.json()
+    assert payload["error"]["code"] == "MODEL_NOT_FOUND"
+
+
+def test_model_detail_endpoint_with_provider_alias() -> None:
+    """Resolve provider aliases when fetching model details."""
+    response = client.get("/v1/models/grok/grok-4")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["model"] == "grok-4"
+    assert "billable" in payload
+
+
 def test_body_size_limit() -> None:
     """Reject payloads larger than the configured request body limit."""
     response = client.post(
