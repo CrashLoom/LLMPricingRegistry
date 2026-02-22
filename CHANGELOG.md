@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.1.1...v0.1.2) (2026-02-22)
+
+
+### Bug Fixes
+
+* set Docker image visibility to public ([#5](https://github.com/CrashLoom/LLMPricingRegistry/issues/5)) ([847380d](https://github.com/CrashLoom/LLMPricingRegistry/commit/847380d8cfc045bd8f3825524b377c5efc590c4a))
+
 ## [0.1.1](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.1.0...v0.1.1) (2026-02-22)
 
 
