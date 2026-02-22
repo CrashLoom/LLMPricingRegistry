@@ -5,21 +5,16 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-# Install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
-
-# Install dependencies (no dev deps)
-COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-dev
-
-# Copy application code and data
-COPY app/ app/
+COPY pyproject.toml uv.lock README.md ./
 COPY pricing/ pricing/
 COPY schema/ schema/
+RUN uv sync --frozen --no-dev
+
+COPY app/ app/
 
 EXPOSE 8080
 
-# (2 * CPUs) + 1 is the recommended worker count; Cloud Run provides 1 vCPU by default
 CMD ["uv", "run", "gunicorn", "app.main:app", \
      "--worker-class", "uvicorn.workers.UvicornWorker", \
      "--workers", "3", \
