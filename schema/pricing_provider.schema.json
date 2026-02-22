@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://llm-pricing-registry.dev/schema/pricing_provider.schema.json",
+  "title": "Provider pricing registry",
+  "type": "object",
+  "required": ["provider", "models"],
+  "additionalProperties": false,
+  "properties": {
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "models": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/modelEntry"
+      }
+    }
+  },
+  "$defs": {
+    "decimalString": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)(\\.\\d+)?$"
+    },
+    "rate": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["per_1m"],
+          "additionalProperties": false,
+          "properties": {
+            "per_1m": {
+              "$ref": "#/$defs/decimalString"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["per_unit"],
+          "additionalProperties": false,
+          "properties": {
+            "per_unit": {
+              "$ref": "#/$defs/decimalString"
+            }
+          }
+        }
+      ]
+    },
+    "modelEntry": {
+      "type": "object",
+      "required": ["model", "effective_from", "billable", "capabilities"],
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "billable": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "enum": [
+              "input_tokens_uncached",
+              "input_tokens_cached",
+              "output_tokens",
+              "reasoning_tokens",
+              "embedding_tokens",
+              "tool_calls",
+              "image_count",
+              "image_megapixels",
+              "audio_input_seconds",
+              "audio_output_seconds",
+              "requests"
+            ]
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/rate"
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "provider": "xai",
+  "source": {
+    "url": "https://x.ai/api",
+    "last_verified": "2026-02-22",
+    "additional_sources": [
+      "https://docs.x.ai/developers/models/grok-3-fast"
+    ]
+  },
+  "models": [
+    {
+      "model": "grok-4",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "3.0000" },
+        "output_tokens": { "per_1m": "15.0000" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Grok 4"
+      }
+    },
+    {
+      "model": "grok-4-fast-reasoning",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "0.5000" }
+      },
+      "capabilities": ["token_pricing", "reasoning_model"],
+      "metadata": {
+        "source_label": "Grok 4 Fast Reasoning"
+      }
+    },
+    {
+      "model": "grok-4-fast-non-reasoning",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "0.5000" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Grok 4 Fast Non-Reasoning"
+      }
+    },
+    {
+      "model": "grok-4-1-fast-reasoning",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "0.5000" }
+      },
+      "capabilities": ["token_pricing", "reasoning_model"],
+      "metadata": {
+        "source_label": "Grok 4.1 Fast Reasoning"
+      }
+    },
+    {
+      "model": "grok-4-1-fast-non-reasoning",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "0.5000" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Grok 4.1 Fast Non-Reasoning"
+      }
+    },
+    {
+      "model": "grok-code-fast-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "1.5000" }
+      },
+      "capabilities": ["token_pricing", "coding_model"],
+      "metadata": {
+        "source_label": "Grok Code Fast 1"
+      }
+    },
+    {
+      "model": "grok-3-fast",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "3.0000" },
+        "input_tokens_cached": { "per_1m": "0.7500" },
+        "output_tokens": { "per_1m": "15.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Grok 3 Fast"
+      }
+    }
+  ]
+}

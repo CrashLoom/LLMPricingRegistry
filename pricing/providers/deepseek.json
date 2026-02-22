@@ -1,0 +1,39 @@
+{
+  "provider": "deepseek",
+  "source": {
+    "url": "https://api-docs.deepseek.com/quick_start/pricing",
+    "last_verified": "2026-02-22"
+  },
+  "models": [
+    {
+      "model": "deepseek-chat",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2800" },
+        "input_tokens_cached": { "per_1m": "0.0280" },
+        "output_tokens": { "per_1m": "0.4200" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "DeepSeek V3.2-Exp",
+        "discount_window_utc": "16:30-00:30",
+        "discount_applies_to": "input_tokens_uncached"
+      }
+    },
+    {
+      "model": "deepseek-reasoner",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2800" },
+        "input_tokens_cached": { "per_1m": "0.0280" },
+        "output_tokens": { "per_1m": "0.4200" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "DeepSeek R1-0528",
+        "discount_window_utc": "16:30-00:30",
+        "discount_applies_to": "input_tokens_uncached"
+      }
+    }
+  ]
+}

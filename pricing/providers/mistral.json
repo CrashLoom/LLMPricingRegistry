@@ -1,0 +1,341 @@
+{
+  "provider": "mistral",
+  "source": {
+    "url": "https://mistral.ai/pricing",
+    "last_verified": "2026-02-22",
+    "notes": "Official API pricing table extracted from the Mistral pricing page."
+  },
+  "models": [
+    {
+      "model": "mistral-large-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.5000"
+        },
+        "output_tokens": {
+          "per_1m": "1.5000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral Large"
+      }
+    },
+    {
+      "model": "mistral-medium-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.4000"
+        },
+        "output_tokens": {
+          "per_1m": "2.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral Medium"
+      }
+    },
+    {
+      "model": "devstral-medium-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.4000"
+        },
+        "output_tokens": {
+          "per_1m": "2.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing",
+        "coding_model"
+      ],
+      "metadata": {
+        "source_label": "Devstral Medium"
+      }
+    },
+    {
+      "model": "devstral-small-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1000"
+        },
+        "output_tokens": {
+          "per_1m": "0.3000"
+        }
+      },
+      "capabilities": [
+        "token_pricing",
+        "coding_model"
+      ],
+      "metadata": {
+        "source_label": "Devstral Small"
+      }
+    },
+    {
+      "model": "codestral-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.9000"
+        },
+        "output_tokens": {
+          "per_1m": "0.9000"
+        }
+      },
+      "capabilities": [
+        "token_pricing",
+        "coding_model"
+      ],
+      "metadata": {
+        "source_label": "Codestral"
+      }
+    },
+    {
+      "model": "mistral-small-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1000"
+        },
+        "output_tokens": {
+          "per_1m": "0.3000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral Small"
+      }
+    },
+    {
+      "model": "labs-mistral-small-creative",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1000"
+        },
+        "output_tokens": {
+          "per_1m": "0.3000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral Small Creative"
+      }
+    },
+    {
+      "model": "magistral-medium-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "2.0000"
+        },
+        "output_tokens": {
+          "per_1m": "5.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing",
+        "reasoning_model"
+      ],
+      "metadata": {
+        "source_label": "Magistral Medium"
+      }
+    },
+    {
+      "model": "magistral-small-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.5000"
+        },
+        "output_tokens": {
+          "per_1m": "1.5000"
+        }
+      },
+      "capabilities": [
+        "token_pricing",
+        "reasoning_model"
+      ],
+      "metadata": {
+        "source_label": "Magistral Small"
+      }
+    },
+    {
+      "model": "ministral-3b-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1000"
+        },
+        "output_tokens": {
+          "per_1m": "0.1000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Ministral 3B"
+      }
+    },
+    {
+      "model": "ministral-8b-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1500"
+        },
+        "output_tokens": {
+          "per_1m": "0.1500"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Ministral 8B"
+      }
+    },
+    {
+      "model": "ministral-14b-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.2000"
+        },
+        "output_tokens": {
+          "per_1m": "0.2000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Ministral 14B"
+      }
+    },
+    {
+      "model": "pixtral-large-latest",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "2.0000"
+        },
+        "output_tokens": {
+          "per_1m": "6.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing",
+        "multimodal"
+      ],
+      "metadata": {
+        "source_label": "Pixtral Large"
+      }
+    },
+    {
+      "model": "pixtral-12b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1500"
+        },
+        "output_tokens": {
+          "per_1m": "0.1500"
+        }
+      },
+      "capabilities": [
+        "token_pricing",
+        "multimodal"
+      ],
+      "metadata": {
+        "source_label": "Pixtral 12B"
+      }
+    },
+    {
+      "model": "open-mistral-nemo",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1500"
+        },
+        "output_tokens": {
+          "per_1m": "0.1500"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral NeMo"
+      }
+    },
+    {
+      "model": "open-mistral-7b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.2500"
+        },
+        "output_tokens": {
+          "per_1m": "0.2500"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral 7B"
+      }
+    },
+    {
+      "model": "open-mixtral-8x7b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.7000"
+        },
+        "output_tokens": {
+          "per_1m": "0.7000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mixtral 8x7B"
+      }
+    },
+    {
+      "model": "open-mixtral-8x22b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "2.0000"
+        },
+        "output_tokens": {
+          "per_1m": "6.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mixtral 8x22B"
+      }
+    }
+  ]
+}

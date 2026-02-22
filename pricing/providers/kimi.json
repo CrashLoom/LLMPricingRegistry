@@ -1,0 +1,38 @@
+{
+  "provider": "kimi",
+  "source": {
+    "url": "https://platform.moonshot.ai/docs/pricing/chat",
+    "last_verified": "2026-02-22",
+    "notes": "Rates are extracted from Moonshot official docs bundle for the pricing page."
+  },
+  "models": [
+    {
+      "model": "kimi-k2.5",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.6000" },
+        "input_tokens_cached": { "per_1m": "0.1000" },
+        "output_tokens": { "per_1m": "3.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input", "long_context", "multimodal"],
+      "metadata": {
+        "source_label": "Kimi K2.5",
+        "context_window": "256k"
+      }
+    },
+    {
+      "model": "kimi-k2-turbo-preview",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "1.1500" },
+        "input_tokens_cached": { "per_1m": "0.1500" },
+        "output_tokens": { "per_1m": "8.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input", "long_context"],
+      "metadata": {
+        "source_label": "Kimi K2 Turbo Preview",
+        "context_window": "256k"
+      }
+    }
+  ]
+}

@@ -1,0 +1,568 @@
+{
+  "provider": "together",
+  "source": {
+    "url": "https://www.together.ai/pricing",
+    "last_verified": "2026-02-22",
+    "notes": "Serverless inference text model pricing extracted from Together AI pricing table (Price per 1M tokens)."
+  },
+  "models": [
+    {
+      "model": "llama-4-maverick",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.2700"
+        },
+        "output_tokens": {
+          "per_1m": "0.8500"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Llama 4 Maverick"
+      }
+    },
+    {
+      "model": "kimi-k2-5",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.5000"
+        },
+        "output_tokens": {
+          "per_1m": "2.8000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Kimi K2.5"
+      }
+    },
+    {
+      "model": "qwen3-coder-next",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.5000"
+        },
+        "output_tokens": {
+          "per_1m": "1.2000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3-Coder-Next"
+      }
+    },
+    {
+      "model": "minimax-m2-5",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.3000"
+        },
+        "output_tokens": {
+          "per_1m": "1.2000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "MiniMax M2.5"
+      }
+    },
+    {
+      "model": "qwen3-5-397b-a17b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.6000"
+        },
+        "output_tokens": {
+          "per_1m": "3.6000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3.5-397B-A17B"
+      }
+    },
+    {
+      "model": "glm-5",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "1.0000"
+        },
+        "output_tokens": {
+          "per_1m": "3.2000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "GLM-5"
+      }
+    },
+    {
+      "model": "llama-3-3-70b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.8800"
+        },
+        "output_tokens": {
+          "per_1m": "0.8800"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Llama 3.3 70B"
+      }
+    },
+    {
+      "model": "llama-3-2-3b-instruct-turbo",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.0600"
+        },
+        "output_tokens": {
+          "per_1m": "0.0600"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Llama 3.2 3B Instruct Turbo"
+      }
+    },
+    {
+      "model": "llama-3-1-405b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "3.5000"
+        },
+        "output_tokens": {
+          "per_1m": "3.5000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Llama 3.1 405B"
+      }
+    },
+    {
+      "model": "llama-3-1-70b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.8800"
+        },
+        "output_tokens": {
+          "per_1m": "0.8800"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Llama 3.1 70B"
+      }
+    },
+    {
+      "model": "llama-3-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1800"
+        },
+        "output_tokens": {
+          "per_1m": "0.1800"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Llama 3.1 8B"
+      }
+    },
+    {
+      "model": "llama-3-8b-instruct-lite",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1000"
+        },
+        "output_tokens": {
+          "per_1m": "0.1000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Llama 3 8B Instruct Lite"
+      }
+    },
+    {
+      "model": "deepseek-r1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "3.0000"
+        },
+        "output_tokens": {
+          "per_1m": "7.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "DeepSeek-R1-0528"
+      }
+    },
+    {
+      "model": "deepseek-v3-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.6000"
+        },
+        "output_tokens": {
+          "per_1m": "1.7000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "DeepSeek-V3.1"
+      }
+    },
+    {
+      "model": "deepseek-v3",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "1.2500"
+        },
+        "output_tokens": {
+          "per_1m": "1.2500"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "DeepSeek-V3-0324"
+      }
+    },
+    {
+      "model": "gpt-oss-120b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1500"
+        },
+        "output_tokens": {
+          "per_1m": "0.6000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "gpt-oss-120B"
+      }
+    },
+    {
+      "model": "gpt-oss-20b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.0500"
+        },
+        "output_tokens": {
+          "per_1m": "0.2000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "gpt-oss-20B"
+      }
+    },
+    {
+      "model": "qwen3-next-80b-a3b-instruct",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1500"
+        },
+        "output_tokens": {
+          "per_1m": "1.5000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3-Next-80B-A3B-Instruct"
+      }
+    },
+    {
+      "model": "qwen3-next-80b-a3b-thinking",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1500"
+        },
+        "output_tokens": {
+          "per_1m": "1.5000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3-Next-80B-A3B-Thinking"
+      }
+    },
+    {
+      "model": "qwen3-vl-32b-instruct",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.5000"
+        },
+        "output_tokens": {
+          "per_1m": "1.5000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3-VL-32B-Instruct"
+      }
+    },
+    {
+      "model": "qwen3-coder-480b-a35b-instruct",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "2.0000"
+        },
+        "output_tokens": {
+          "per_1m": "2.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3-Coder 480B A35B Instruct"
+      }
+    },
+    {
+      "model": "qwen3-235b-a22b-instruct-2507-fp8",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.2000"
+        },
+        "output_tokens": {
+          "per_1m": "0.6000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3 235B A22B Instruct 2507 FP8"
+      }
+    },
+    {
+      "model": "qwen3-235b-a22b-thinking-2507",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.6500"
+        },
+        "output_tokens": {
+          "per_1m": "3.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen3 235B A22B Thinking 2507 FP8"
+      }
+    },
+    {
+      "model": "qwen2-5-7b-instruct-turbo",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.3000"
+        },
+        "output_tokens": {
+          "per_1m": "0.3000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Qwen2.5 7B Instruct Turbo"
+      }
+    },
+    {
+      "model": "glm-4-7",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.4500"
+        },
+        "output_tokens": {
+          "per_1m": "2.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "GLM-4.7"
+      }
+    },
+    {
+      "model": "kimi-k2-instruct",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "1.0000"
+        },
+        "output_tokens": {
+          "per_1m": "3.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Kimi K2 Instruct"
+      }
+    },
+    {
+      "model": "glm-4-5-air",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.2000"
+        },
+        "output_tokens": {
+          "per_1m": "1.1000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "GLM-4.5-Air"
+      }
+    },
+    {
+      "model": "kimi-k2-thinking",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "1.2000"
+        },
+        "output_tokens": {
+          "per_1m": "4.0000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Kimi K2 Thinking"
+      }
+    },
+    {
+      "model": "mistral-7b-instruct-v0-2",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.2000"
+        },
+        "output_tokens": {
+          "per_1m": "0.2000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral (7B) Instruct v0.2"
+      }
+    },
+    {
+      "model": "mistral-small-3",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.1000"
+        },
+        "output_tokens": {
+          "per_1m": "0.3000"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Mistral Small 3"
+      }
+    },
+    {
+      "model": "gemma-3n-e4b-it",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": {
+          "per_1m": "0.0200"
+        },
+        "output_tokens": {
+          "per_1m": "0.0400"
+        }
+      },
+      "capabilities": [
+        "token_pricing"
+      ],
+      "metadata": {
+        "source_label": "Gemma 3n E4B Instruct"
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "provider": "anthropic",
+  "source": {
+    "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "last_verified": "2026-02-22"
+  },
+  "models": [
+    {
+      "model": "claude-haiku-4.5",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "1.0000" },
+        "input_tokens_cached": { "per_1m": "0.1000" },
+        "output_tokens": { "per_1m": "5.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Claude Haiku 4.5"
+      }
+    },
+    {
+      "model": "claude-opus-4.5",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "15.0000" },
+        "input_tokens_cached": { "per_1m": "1.5000" },
+        "output_tokens": { "per_1m": "75.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Claude Opus 4.5"
+      }
+    },
+    {
+      "model": "claude-opus-4.6",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "5.0000" },
+        "input_tokens_cached": { "per_1m": "0.5000" },
+        "output_tokens": { "per_1m": "25.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Claude Opus 4.6"
+      }
+    },
+    {
+      "model": "claude-sonnet-4.5",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "3.0000" },
+        "input_tokens_cached": { "per_1m": "0.3000" },
+        "output_tokens": { "per_1m": "15.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Claude Sonnet 4.5"
+      }
+    },
+    {
+      "model": "claude-sonnet-4.6",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "3.0000" },
+        "input_tokens_cached": { "per_1m": "0.3000" },
+        "output_tokens": { "per_1m": "15.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Claude Sonnet 4.6"
+      }
+    }
+  ]
+}

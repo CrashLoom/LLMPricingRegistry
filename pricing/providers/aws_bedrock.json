@@ -1,0 +1,153 @@
+{
+  "provider": "aws_bedrock",
+  "source": {
+    "url": "https://aws.amazon.com/bedrock/pricing/",
+    "last_verified": "2026-02-22",
+    "notes": "On-demand model inference rates by region; rates normalized from per-1K token pricing to per-1M token pricing."
+  },
+  "models": [
+    {
+      "model": "moonshot/kimi-k2-thinking@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.6000" },
+        "output_tokens": { "per_1m": "2.5000" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing", "reasoning_model"],
+      "metadata": {
+        "source_label": "Kimi K2 Thinking",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "moonshot/kimi-k2-thinking@us-west-2",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.6000" },
+        "output_tokens": { "per_1m": "2.3000" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing", "reasoning_model"],
+      "metadata": {
+        "source_label": "Kimi K2 Thinking",
+        "region": "us-west-2"
+      }
+    },
+    {
+      "model": "minimax/minimax-m2@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.3000" },
+        "output_tokens": { "per_1m": "1.6500" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing"],
+      "metadata": {
+        "source_label": "MiniMax M2",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "mistral/magistral-small-1.2@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.5000" },
+        "output_tokens": { "per_1m": "1.5000" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing", "reasoning_model"],
+      "metadata": {
+        "source_label": "Magistral Small 1.2",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "mistral/magistral-medium-1.1@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "2.0000" },
+        "output_tokens": { "per_1m": "6.0000" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing", "reasoning_model"],
+      "metadata": {
+        "source_label": "Magistral Medium 1.1",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "mistral/ministral-3b@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.0400" },
+        "output_tokens": { "per_1m": "0.0400" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing"],
+      "metadata": {
+        "source_label": "Ministral 3B",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "mistral/ministral-8b@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.1500" },
+        "output_tokens": { "per_1m": "0.1500" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing"],
+      "metadata": {
+        "source_label": "Ministral 8B",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "openai/gpt-oss-safeguard-120b@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.1500" },
+        "output_tokens": { "per_1m": "0.6000" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing", "safeguard_model"],
+      "metadata": {
+        "source_label": "GPT OSS Safeguard 120B",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "nvidia/llama-3.1-nemotron-nano-8b-v1@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.0600" },
+        "output_tokens": { "per_1m": "0.2300" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing"],
+      "metadata": {
+        "source_label": "Llama 3.1 Nemotron Nano 8B v1",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "nvidia/llama-3.3-nemotron-super-49b-v1@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.1200" },
+        "output_tokens": { "per_1m": "0.3000" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing"],
+      "metadata": {
+        "source_label": "Llama 3.3 Nemotron Super 49B v1",
+        "region": "us-east-1"
+      }
+    },
+    {
+      "model": "nvidia/llama-3.1-nemotron-ultra-253b-v1@us-east-1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.6000" },
+        "output_tokens": { "per_1m": "1.8000" }
+      },
+      "capabilities": ["token_pricing", "regional_pricing"],
+      "metadata": {
+        "source_label": "Llama 3.1 Nemotron Ultra 253B v1",
+        "region": "us-east-1"
+      }
+    }
+  ]
+}

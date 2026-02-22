@@ -1,0 +1,86 @@
+{
+  "provider": "openai",
+  "source": {
+    "url": "https://openai.com/api/pricing/",
+    "last_verified": "2026-02-22"
+  },
+  "models": [
+    {
+      "model": "gpt-4.1",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "3.0000" },
+        "input_tokens_cached": { "per_1m": "0.7500" },
+        "output_tokens": { "per_1m": "12.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "GPT-4.1"
+      }
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.8000" },
+        "input_tokens_cached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "3.2000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "GPT-4.1 mini"
+      }
+    },
+    {
+      "model": "gpt-4.1-nano",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2000" },
+        "input_tokens_cached": { "per_1m": "0.0500" },
+        "output_tokens": { "per_1m": "0.8000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "GPT-4.1 nano"
+      }
+    },
+    {
+      "model": "gpt-5-mini",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2500" },
+        "input_tokens_cached": { "per_1m": "0.0250" },
+        "output_tokens": { "per_1m": "2.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "GPT-5 mini"
+      }
+    },
+    {
+      "model": "gpt-5.2",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "1.7500" },
+        "input_tokens_cached": { "per_1m": "0.1750" },
+        "output_tokens": { "per_1m": "14.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "GPT-5.2"
+      }
+    },
+    {
+      "model": "gpt-5.2-pro",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "21.0000" },
+        "output_tokens": { "per_1m": "168.0000" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "GPT-5.2 pro"
+      }
+    }
+  ]
+}

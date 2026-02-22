@@ -1,0 +1,66 @@
+{
+  "provider": "openrouter",
+  "source": {
+    "url": "https://openrouter.ai/api/v1/models",
+    "last_verified": "2026-02-22"
+  },
+  "models": [
+    {
+      "model": "anthropic/claude-sonnet-4.6",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "3.0000" },
+        "input_tokens_cached": { "per_1m": "0.3000" },
+        "output_tokens": { "per_1m": "15.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input", "gateway_model"]
+    },
+    {
+      "model": "deepseek/deepseek-chat",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.3200" },
+        "output_tokens": { "per_1m": "0.8900" }
+      },
+      "capabilities": ["token_pricing", "gateway_model"]
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "2.0000" },
+        "input_tokens_cached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "12.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input", "gateway_model"]
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "1.7500" },
+        "input_tokens_cached": { "per_1m": "0.1750" },
+        "output_tokens": { "per_1m": "14.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input", "gateway_model"]
+    },
+    {
+      "model": "openai/gpt-5.2-pro",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "21.0000" },
+        "output_tokens": { "per_1m": "168.0000" }
+      },
+      "capabilities": ["token_pricing", "gateway_model"]
+    },
+    {
+      "model": "openrouter/free",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.0000" },
+        "output_tokens": { "per_1m": "0.0000" }
+      },
+      "capabilities": ["token_pricing", "gateway_model", "free_tier"]
+    }
+  ]
+}

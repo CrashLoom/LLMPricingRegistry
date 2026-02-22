@@ -1,0 +1,10 @@
+{
+  "provider_aliases": {
+    "grok": "xai",
+    "x.ai": "xai",
+    "bedrock": "aws_bedrock",
+    "aws-bedrock": "aws_bedrock",
+    "amazon-bedrock": "aws_bedrock",
+    "aws bedrock": "aws_bedrock"
+  }
+}

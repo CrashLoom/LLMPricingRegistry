@@ -1,0 +1,11 @@
+{
+  "provider": "openai",
+  "aliases": {
+    "gpt-5": "gpt-5.2",
+    "gpt-5-pro": "gpt-5.2-pro",
+    "gpt-5-mini-latest": "gpt-5-mini",
+    "gpt-4.1-latest": "gpt-4.1",
+    "gpt-4.1-mini-latest": "gpt-4.1-mini",
+    "gpt-4.1-nano-latest": "gpt-4.1-nano"
+  }
+}

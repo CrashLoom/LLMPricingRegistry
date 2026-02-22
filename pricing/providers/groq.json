@@ -1,0 +1,93 @@
+{
+  "provider": "groq",
+  "source": {
+    "url": "https://groq.com/pricing/",
+    "last_verified": "2026-02-22"
+  },
+  "models": [
+    {
+      "model": "llama-3.1-8b-instant",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.0500" },
+        "output_tokens": { "per_1m": "0.0800" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Llama 3.1 8B Instant"
+      }
+    },
+    {
+      "model": "llama-3.3-70b-versatile",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.5900" },
+        "output_tokens": { "per_1m": "0.7900" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Llama 3.3 70B Versatile"
+      }
+    },
+    {
+      "model": "meta-llama/llama-guard-4-12b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "0.2000" }
+      },
+      "capabilities": ["token_pricing", "moderation_model"],
+      "metadata": {
+        "source_label": "Llama Guard 4 12B"
+      }
+    },
+    {
+      "model": "moonshotai/kimi-k2-instruct-0905",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "1.0000" },
+        "output_tokens": { "per_1m": "3.0000" }
+      },
+      "capabilities": ["token_pricing", "long_context"],
+      "metadata": {
+        "source_label": "Kimi K2 Instruct 0905"
+      }
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.1500" },
+        "output_tokens": { "per_1m": "0.7500" }
+      },
+      "capabilities": ["token_pricing", "open_weights"],
+      "metadata": {
+        "source_label": "GPT OSS 120B"
+      }
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.1000" },
+        "output_tokens": { "per_1m": "0.5000" }
+      },
+      "capabilities": ["token_pricing", "open_weights"],
+      "metadata": {
+        "source_label": "GPT OSS 20B"
+      }
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "effective_from": "2026-02-22",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.2900" },
+        "output_tokens": { "per_1m": "0.5900" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Qwen 3 32B"
+      }
+    }
+  ]
+}
