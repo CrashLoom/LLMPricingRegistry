@@ -27,8 +27,7 @@ repos:
     hooks:
       - id: pyright
         files: \.py$
-        additional_dependencies:
-          - pytest
+        exclude: ^tests/
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v3.4.0
     hooks:
