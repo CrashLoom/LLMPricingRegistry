@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.2.0...v0.3.0) (2026-02-22)
+
+
+### Features
+
+* add endpoint get model details ([#9](https://github.com/CrashLoom/LLMPricingRegistry/issues/9)) ([a03fb20](https://github.com/CrashLoom/LLMPricingRegistry/commit/a03fb2058d633bf44ff61a56a2e5429388cabf73))
+
 ## [0.2.0](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.1.2...v0.2.0) (2026-02-22)
 
 
