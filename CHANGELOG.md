@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.1.0...v0.1.1) (2026-02-22)
+
+
+### Bug Fixes
+
+* ensure correct release please workflow ([#3](https://github.com/CrashLoom/LLMPricingRegistry/issues/3)) ([73898d3](https://github.com/CrashLoom/LLMPricingRegistry/commit/73898d3714b6205a898ba6fc4cc8e86dadab3957))
+
 ## 0.1.0 (2026-02-22)
 
 ### Added
