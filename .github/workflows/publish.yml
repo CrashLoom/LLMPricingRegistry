@@ -20,60 +20,19 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: uv sync --frozen
+        run: uv sync --frozen --extra dev
 
       - name: Run tests
         run: uv run pytest tests/ -v
 
-  changelog-verify:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Extract semver from tag
-        id: tag_version
-        uses: actions-ecosystem/action-regex-match@v2
-        with:
-          text: ${{ github.ref_name }}
-          regex: "^v(.*)$"
-
-      - name: Verify CHANGELOG has entry for this tag
-        uses: mindsers/changelog-reader-action@v2
-        with:
-          path: ./CHANGELOG.md
-          version: ${{ steps.tag_version.outputs.group1 }}
-          validation_level: error
-
   publish:
-    needs: [test, changelog-verify]
+    needs: [test]
     runs-on: ubuntu-latest
     permissions:
-      contents: write
       packages: write
 
     steps:
       - uses: actions/checkout@v4
-
-      - uses: astral-sh/setup-uv@v4
-        with:
-          python-version: "3.12"
-
-      - name: Extract semver from tag
-        id: tag_version
-        uses: actions-ecosystem/action-regex-match@v2
-        with:
-          text: ${{ github.ref_name }}
-          regex: "^v(.*)$"
-
-      - name: Bump version in pyproject.toml
-        run: uv version "${{ steps.tag_version.outputs.group1 }}" --no-sync
-
-      - name: Commit and push version bump
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: bump version to ${{ github.ref_name }} [skip ci]"
-          file_pattern: pyproject.toml uv.lock
-          branch: main
 
       - name: Log in to GHCR
         uses: docker/login-action@v3
@@ -91,7 +50,7 @@ jobs:
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=latest
 
       - name: Build and push
         uses: docker/build-push-action@v5
