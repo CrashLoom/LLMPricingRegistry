@@ -227,6 +227,26 @@ class ModelsResponse(BaseModel):
     models: list[ModelSummary]
 
 
+class PricingTierResponse(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    condition: dict[str, Any]
+    billable: dict[str, dict[str, str]]
+
+
+class ModelDetailResponse(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    pricing_version: str
+    provider: str
+    model: str
+    effective_from: str
+    capabilities: list[str]
+    metadata: dict[str, Any] | None = None
+    billable: dict[str, dict[str, str]]
+    pricing_tiers: list[PricingTierResponse]
+
+
 class VersionResponse(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
