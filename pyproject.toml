@@ -30,6 +30,9 @@ dev = [
 pythonpath = ["."]
 testpaths = ["tests"]
 
+[tool.black]
+line-length = 79
+
 [tool.hatch.build.targets.wheel]
 packages = ["app"]
 
