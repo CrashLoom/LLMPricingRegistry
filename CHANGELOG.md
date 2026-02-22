@@ -7,9 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-02-22
-
 ### Added
+
 - Initial pricing registry with 9 providers (OpenAI, Anthropic, Google, DeepSeek, xAI, Groq, Kimi, OpenRouter, AWS Bedrock)
 - Deterministic billing engine using Python `Decimal` for financial precision
 - `POST /v1/estimate` — single cost estimate
@@ -26,5 +25,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 1MB request body limit middleware
 - Structured JSON logging
 
-[Unreleased]: https://github.com/YOUR_ORG/LLMPricingRegistry/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/YOUR_ORG/LLMPricingRegistry/releases/tag/v0.1.0
+### Fixed
+
+- Fixed GitHub Actions test failures where `pytest` was missing in CI environments.
+- Updated Docker publish metadata tagging to always publish a `latest` image tag alongside semver tags.
+
+[Unreleased]: https://github.com/CrashLoom/LLMPricingRegistry/commits/HEAD

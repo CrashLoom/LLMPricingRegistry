@@ -7,7 +7,7 @@ name = "llm-pricing-registry"
 version = "0.1.0"
 description = "Versioned LLM pricing registry and deterministic estimation API"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 license = { text = "MIT" }
 authors = [
   { name = "LLM Pricing Registry Contributors" }
