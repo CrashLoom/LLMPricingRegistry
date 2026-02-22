@@ -8,6 +8,7 @@ from typing import Any
 from jsonschema import Draft202012Validator
 
 from app.pricing import models as pricing_models
+from app.pricing.models import PricingTier, TierCondition
 
 
 class PricingRepository:
@@ -177,12 +178,23 @@ class PricingRepository:
         models: dict[str, pricing_models.ModelPricing] = {}
         for raw_model in raw_models:
             billable = self._parse_billable(raw_model["billable"])
+            tiers = [
+                PricingTier(
+                    condition=TierCondition(
+                        dimension=raw_tier["condition"]["dimension"],
+                        gt=raw_tier["condition"]["gt"],
+                    ),
+                    billable=self._parse_billable(raw_tier["billable"]),
+                )
+                for raw_tier in raw_model.get("pricing_tiers", [])
+            ]
             entry = pricing_models.ModelPricing(
                 model=raw_model["model"],
                 effective_from=raw_model["effective_from"],
                 billable=billable,
                 capabilities=tuple(raw_model.get("capabilities", [])),
                 metadata=raw_model.get("metadata", {}),
+                pricing_tiers=tuple(tiers),
             )
             if entry.model in models:
                 message = f"Duplicate model '{entry.model}' in {filename}"

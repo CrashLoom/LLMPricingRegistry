@@ -63,23 +63,24 @@ class BillingEngine:
         usage: dict[str, int],
         mode: str = "strict",
         pricing_version: str = "latest",
-        currency: str = "USD",
         override_ratecard: OverrideRatecard | None = None,
     ) -> EstimateResult:
         """Estimate cost for a provider/model usage payload."""
         self._validate_pricing_version(pricing_version)
-        self._validate_currency(currency)
         self._validate_mode(mode)
         self._validate_usage(usage)
 
-        resolved_model, rate_map = self._resolve_rate_map(
+        resolved_model, rate_map, tier_warning = self._resolve_rate_map(
             provider=provider,
             model=model,
+            usage=usage,
             override_ratecard=override_ratecard,
         )
 
         total_raw = Decimal("0")
         warnings: list[str] = []
+        if tier_warning:
+            warnings.append(tier_warning)
         breakdown: list[BreakdownItem] = []
 
         for dimension in sorted(usage):
@@ -138,8 +139,9 @@ class BillingEngine:
         *,
         provider: str,
         model: str,
+        usage: dict[str, int],
         override_ratecard: OverrideRatecard | None,
-    ) -> tuple[str, dict[str, Rate]]:
+    ) -> tuple[str, dict[str, Rate], str | None]:
         if override_ratecard is not None:
             if override_ratecard.currency != self._repository.currency:
                 raise PricingError(
@@ -147,7 +149,7 @@ class BillingEngine:
                     f"Override currency must be {self._repository.currency}",
                     details={"currency": override_ratecard.currency},
                 )
-            return model, override_ratecard.billable
+            return model, override_ratecard.billable, None
 
         provider_data = self._repository.get_provider(provider)
         if provider_data is None:
@@ -166,7 +168,35 @@ class BillingEngine:
                 details={"provider": provider, "model": model},
             )
 
-        return resolved_model, model_data.billable
+        rate_map = model_data.billable
+        tier_warning: str | None = None
+
+        if model_data.pricing_tiers:
+            for tier in sorted(
+                model_data.pricing_tiers,
+                key=lambda t: t.condition.gt,
+                reverse=True,
+            ):
+                value = self._resolve_dimension(
+                    tier.condition.dimension, usage
+                )
+                if value > tier.condition.gt:
+                    rate_map = tier.billable
+                    tier_warning = (
+                        f"Pricing tier applied: {tier.condition.dimension} "
+                        f"{value} > {tier.condition.gt}."
+                    )
+                    break
+
+        return resolved_model, rate_map, tier_warning
+
+    @staticmethod
+    def _resolve_dimension(dimension: str, usage: dict[str, int]) -> int:
+        if dimension == "context_tokens":
+            return usage.get("input_tokens_uncached", 0) + usage.get(
+                "input_tokens_cached", 0
+            )
+        return usage.get(dimension, 0)
 
     @staticmethod
     def _compute_cost(*, quantity: int, rate: Rate) -> Decimal:
@@ -196,15 +226,6 @@ class BillingEngine:
             "PRICING_VERSION_NOT_FOUND",
             "Pricing version not found",
             details={"pricing_version": pricing_version},
-        )
-
-    def _validate_currency(self, currency: str) -> None:
-        if currency == self._repository.currency:
-            return
-        raise PricingError(
-            "INVALID_REQUEST",
-            f"Currency must be {self._repository.currency}",
-            details={"currency": currency},
         )
 
     @staticmethod

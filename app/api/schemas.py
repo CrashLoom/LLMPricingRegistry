@@ -85,7 +85,6 @@ class EstimateOptions(BaseModel):
         "prefer_provider",
         "registry_only",
     ] = "prefer_gateway"
-    currency: str = "USD"
 
 
 class EstimateRequest(BaseModel):

@@ -52,6 +52,28 @@
         }
       ]
     },
+    "billable": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "enum": [
+          "input_tokens_uncached",
+          "input_tokens_cached",
+          "output_tokens",
+          "reasoning_tokens",
+          "embedding_tokens",
+          "tool_calls",
+          "image_count",
+          "image_megapixels",
+          "audio_input_seconds",
+          "audio_output_seconds",
+          "requests"
+        ]
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/rate"
+      }
+    },
     "modelEntry": {
       "type": "object",
       "required": ["model", "effective_from", "billable", "capabilities"],
@@ -66,25 +88,28 @@
           "format": "date"
         },
         "billable": {
-          "type": "object",
-          "minProperties": 1,
-          "propertyNames": {
-            "enum": [
-              "input_tokens_uncached",
-              "input_tokens_cached",
-              "output_tokens",
-              "reasoning_tokens",
-              "embedding_tokens",
-              "tool_calls",
-              "image_count",
-              "image_megapixels",
-              "audio_input_seconds",
-              "audio_output_seconds",
-              "requests"
-            ]
-          },
-          "additionalProperties": {
-            "$ref": "#/$defs/rate"
+          "$ref": "#/$defs/billable"
+        },
+        "pricing_tiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["condition", "billable"],
+            "additionalProperties": false,
+            "properties": {
+              "condition": {
+                "type": "object",
+                "required": ["dimension", "gt"],
+                "additionalProperties": false,
+                "properties": {
+                  "dimension": {"type": "string", "minLength": 1},
+                  "gt": {"type": "integer", "minimum": 0}
+                }
+              },
+              "billable": {
+                "$ref": "#/$defs/billable"
+              }
+            }
           }
         },
         "capabilities": {

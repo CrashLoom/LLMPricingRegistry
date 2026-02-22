@@ -15,12 +15,27 @@ class Rate:
 
 
 @dataclass(frozen=True)
+class TierCondition:
+    # any usage key, or "context_tokens" (= input_uncached + input_cached)
+    dimension: str
+    # threshold
+    gt: int
+
+
+@dataclass(frozen=True)
+class PricingTier:
+    condition: TierCondition
+    billable: dict[str, Rate]
+
+
+@dataclass(frozen=True)
 class ModelPricing:
     model: str
     effective_from: str
     billable: dict[str, Rate]
     capabilities: tuple[str, ...]
     metadata: dict[str, Any]
+    pricing_tiers: tuple[PricingTier, ...]
 
 
 @dataclass(frozen=True)

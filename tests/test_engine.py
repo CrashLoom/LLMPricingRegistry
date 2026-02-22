@@ -152,3 +152,71 @@ def test_pricing_version_not_found() -> None:
         )
 
     assert exc_info.value.code == "PRICING_VERSION_NOT_FOUND"
+
+
+def test_gemini_context_tier_below_threshold() -> None:
+    """Use base rates when context is within the <=200k tier."""
+    engine = make_engine()
+
+    result = engine.estimate(
+        provider="google",
+        model="gemini-2.5-pro",
+        usage={"input_tokens_uncached": 100_000, "output_tokens": 500},
+    )
+
+    assert result.model == "gemini-2.5-pro"
+    # cost = (100000/1M * 1.25) + (500/1M * 10.0) = 0.125 + 0.005 = 0.130000
+    assert result.total_cost == "0.130000"
+    assert not result.warnings
+
+
+def test_gemini_context_tier_above_threshold() -> None:
+    """Apply higher-tier rates and emit a warning when context exceeds 200k."""
+    engine = make_engine()
+
+    result = engine.estimate(
+        provider="google",
+        model="gemini-2.5-pro",
+        usage={"input_tokens_uncached": 300_000, "output_tokens": 500},
+    )
+
+    assert result.model == "gemini-2.5-pro"
+    # cost = (300000/1M * 2.50) + (500/1M * 15.0) = 0.75 + 0.0075 = 0.757500
+    assert result.total_cost == "0.757500"
+    assert any("pricing tier applied" in w.lower() for w in result.warnings)
+
+
+def test_gemini_context_tier_at_boundary() -> None:
+    """Use base rates at exactly 200k boundary (condition is strictly gt)."""
+    engine = make_engine()
+
+    result = engine.estimate(
+        provider="google",
+        model="gemini-2.5-pro",
+        usage={"input_tokens_uncached": 200_000, "output_tokens": 0},
+    )
+
+    # cost = 200000/1M * 1.25 = 0.250000
+    assert result.total_cost == "0.250000"
+    assert not result.warnings
+
+
+def test_gemini_context_tier_cached_counts_toward_context() -> None:
+    """Cached tokens count toward the context_tokens threshold."""
+    engine = make_engine()
+
+    # 150k uncached + 100k cached = 250k context tokens → triggers >200k tier
+    result = engine.estimate(
+        provider="google",
+        model="gemini-2.5-pro",
+        usage={
+            "input_tokens_uncached": 150_000,
+            "input_tokens_cached": 100_000,
+        },
+    )
+
+    assert result.model == "gemini-2.5-pro"
+    # cost = (150000/1M * 2.50) + (100000/1M * 0.625)
+    # = 0.375 + 0.0625 = 0.437500
+    assert result.total_cost == "0.437500"
+    assert any("pricing tier applied" in w.lower() for w in result.warnings)
