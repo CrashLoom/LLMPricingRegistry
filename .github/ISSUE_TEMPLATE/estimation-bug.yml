@@ -1,0 +1,54 @@
+name: Estimation bug
+description: Report incorrect API estimation behavior.
+title: "fix(api): estimation mismatch for <provider>/<model>"
+labels:
+  - bug
+  - api
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share a minimal reproducible example.
+  - type: input
+    id: provider
+    attributes:
+      label: Provider
+      placeholder: openai
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      placeholder: gpt-4.1-mini
+    validations:
+      required: true
+  - type: textarea
+    id: request_payload
+    attributes:
+      label: Request payload
+      description: JSON sent to `/v1/estimate` or `/v1/estimate/batch`.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual response
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected response or calculation
+      description: Include manual calculation if possible.
+    validations:
+      required: true
+  - type: input
+    id: pricing_version
+    attributes:
+      label: Pricing version used
+      placeholder: latest
+    validations:
+      required: true

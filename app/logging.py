@@ -29,11 +29,13 @@ class JsonFormatter(logging.Formatter):
 
 
 def configure_logging() -> None:
-    """Configure root logging to emit JSON records to stdout."""
+    """Configure logging to emit JSON records when no host config exists."""
     handler = logging.StreamHandler()
     handler.setFormatter(JsonFormatter())
 
     root_logger = logging.getLogger()
-    root_logger.handlers.clear()
+    if root_logger.handlers:
+        return
+
     root_logger.addHandler(handler)
     root_logger.setLevel(logging.INFO)
