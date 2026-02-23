@@ -1,12 +1,12 @@
 # LLM Pricing Registry
 
-Open-source versioned pricing registry and deterministic cost estimation API for LLM usage billing.
+Open-source pricing registry and deterministic cost estimation API for current-snapshot LLM usage billing.
 
-61 models · 10 providers · Decimal-precise arithmetic · Zero database
+108 models · 12 providers · Decimal-precise arithmetic · Zero database
 
 ## Providers
 
-OpenAI · Anthropic · Google · Vertex AI · DeepSeek · xAI · Groq · Kimi · OpenRouter · AWS Bedrock
+OpenAI · Anthropic · Google · Vertex AI · DeepSeek · xAI · Groq · Kimi · Mistral · Together · OpenRouter · AWS Bedrock
 
 ## Stack
 
@@ -117,30 +117,43 @@ Pass a custom ratecard to bypass the registry:
 
 ## Pricing data
 
-Pricing files live in [`pricing/providers/`](pricing/providers/) as versioned JSON, validated against [`schema/pricing_provider.schema.json`](schema/pricing_provider.schema.json) at startup.
+Pricing files live in [`pricing/providers/`](pricing/providers/) as snapshot JSON, validated against [`schema/pricing_provider.schema.json`](schema/pricing_provider.schema.json) at startup.
 
-To add or update a provider, edit the relevant JSON file and open a PR. The `[Unreleased]` section in [CHANGELOG.md](CHANGELOG.md) must be updated.
+Each provider file must include:
+
+- `source.url` (official pricing page URL)
+- `source.last_verified` (`YYYY-MM-DD`)
+
+To add or update a provider, edit the relevant JSON file and open a PR. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full checklist.
 
 ## Development
 
 ```bash
-uv sync
+uv sync --extra dev
+pre-commit run -a
 uv run pytest tests/ -v
 ```
 
 ## Release process
 
-1. Add changes under `## [Unreleased]` in [CHANGELOG.md](CHANGELOG.md)
-2. When ready: move entries to a new versioned section, e.g. `## [0.2.0] - 2026-03-01`
-3. Push a tag: `git tag v0.2.0 && git push origin v0.2.0`
+This repository uses Release Please.
+
+1. Open PRs with conventional commit titles (`feat: ...`, `fix: ...`, `docs: ...`).
+2. After merge to `main`, Release Please opens/updates the release PR.
+3. Merge the release PR to cut the release and update `CHANGELOG.md`.
 
 GitHub Actions will:
 
-- Run tests
-- Verify the changelog entry exists
-- Bump the version in `pyproject.toml`
-- Build and push the Docker image to `ghcr.io` with `latest`, `0.2`, and `0.2.0` tags
-- Create a GitHub Release with the changelog notes
+- Run tests and checks
+- Validate semantic PR title format
+- Build and push the Docker image to `ghcr.io` when a release is created
+- Create a GitHub Release with generated notes
+
+## Contributing
+
+- Contributor guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Use issue forms for pricing requests, pricing corrections, and estimation bugs
+- Look for `good first issue` and `help wanted` labels
 
 ## License
 

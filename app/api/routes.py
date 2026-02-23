@@ -73,26 +73,7 @@ def _to_override_ratecard(payload: EstimateRequest) -> OverrideRatecard | None:
     )
 
 
-_GATEWAY_MODE_WARNING = (
-    "gateway_pricing_mode is not yet implemented; "
-    "all requests use registry pricing regardless of this setting"
-)
-
-
-def _check_gateway_mode(options_mode: str) -> str | None:
-    if options_mode != "prefer_gateway":
-        return _GATEWAY_MODE_WARNING
-    return None
-
-
-def _estimate_response_from_result(
-    result: EstimateResult,
-    extra_warnings: list[str] | None = None,
-) -> EstimateResponse:
-    warnings = list(result.warnings)
-    if extra_warnings:
-        warnings.extend(extra_warnings)
-
+def _estimate_response_from_result(result: EstimateResult) -> EstimateResponse:
     return EstimateResponse(
         pricing_version=result.pricing_version,
         provider=result.provider,
@@ -107,7 +88,7 @@ def _estimate_response_from_result(
             for item in result.breakdown
         ],
         total=TotalCost(currency=result.currency, cost=result.total_cost),
-        warnings=warnings,
+        warnings=result.warnings,
         meta=EstimateMeta(
             computed_at=result.computed_at,
             engine_version=result.engine_version,
@@ -137,9 +118,7 @@ def estimate(payload: EstimateRequest, request: Request) -> EstimateResponse:
         override_ratecard=_to_override_ratecard(payload),
     )
 
-    gw_warning = _check_gateway_mode(payload.options.gateway_pricing_mode)
-    extra = [gw_warning] if gw_warning else None
-    return _estimate_response_from_result(result, extra_warnings=extra)
+    return _estimate_response_from_result(result)
 
 
 @router.post("/estimate/batch", response_model=BatchEstimateResponse)
@@ -174,14 +153,7 @@ def estimate_batch(
             )
             continue
 
-        gw_warning = _check_gateway_mode(item.options.gateway_pricing_mode)
-        extra = [gw_warning] if gw_warning else None
-        results.append(
-            _estimate_response_from_result(
-                result,
-                extra_warnings=extra,
-            )
-        )
+        results.append(_estimate_response_from_result(result))
 
     return BatchEstimateResponse(
         pricing_version=repository.pricing_version,

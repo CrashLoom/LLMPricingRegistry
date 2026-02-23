@@ -195,23 +195,6 @@ def test_models_endpoint_unknown_provider() -> None:
     assert payload["error"]["code"] == "PROVIDER_NOT_SUPPORTED"
 
 
-def test_gateway_pricing_mode_warning() -> None:
-    """Emit a warning for non-default gateway pricing mode options."""
-    response = client.post(
-        "/v1/estimate",
-        json={
-            "provider": "openai",
-            "model": "gpt-4.1-mini",
-            "usage": {"input_tokens_uncached": 1000},
-            "options": {"gateway_pricing_mode": "registry_only"},
-        },
-    )
-
-    assert response.status_code == 200
-    payload = response.json()
-    assert any("gateway_pricing_mode" in w for w in payload["warnings"])
-
-
 def test_internal_error_does_not_leak_details() -> None:
     """Ensure internal errors do not expose sensitive details fields."""
     response = client.get("/v1/models", params={"provider": "nonexistent"})

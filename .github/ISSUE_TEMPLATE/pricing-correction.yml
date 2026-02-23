@@ -1,0 +1,60 @@
+name: Pricing correction
+description: Report incorrect provider/model rates in the registry.
+title: "fix(pricing): correct <provider>/<model>"
+labels:
+  - bug
+  - pricing
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to report incorrect published rates.
+  - type: input
+    id: provider
+    attributes:
+      label: Provider slug
+      placeholder: openai
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model id
+      placeholder: gpt-4.1-mini
+    validations:
+      required: true
+  - type: input
+    id: file_path
+    attributes:
+      label: Registry file path
+      placeholder: pricing/providers/openai.json
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Official pricing URL
+      placeholder: https://example.com/pricing
+    validations:
+      required: true
+  - type: input
+    id: last_verified
+    attributes:
+      label: Last verified date (YYYY-MM-DD)
+      placeholder: 2026-02-23
+    validations:
+      required: true
+  - type: textarea
+    id: current_value
+    attributes:
+      label: Current registry value
+      description: Copy the current rate entry from the JSON file.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_value
+    attributes:
+      label: Correct value
+      description: Provide the corrected dimensions/rates.
+    validations:
+      required: true

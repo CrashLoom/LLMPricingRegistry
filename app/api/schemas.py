@@ -80,11 +80,6 @@ class EstimateOptions(BaseModel):
 
     pricing_version: str = "latest"
     mode: Literal["strict", "lenient"] = "strict"
-    gateway_pricing_mode: Literal[
-        "prefer_gateway",
-        "prefer_provider",
-        "registry_only",
-    ] = "prefer_gateway"
 
 
 class EstimateRequest(BaseModel):

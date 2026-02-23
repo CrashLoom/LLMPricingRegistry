@@ -1,0 +1,70 @@
+name: Add provider or model
+description: Propose adding a new provider/model or alias mapping.
+title: "feat(pricing): add <provider>/<model>"
+labels:
+  - enhancement
+  - pricing
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a pricing expansion.
+        Please include an official pricing source.
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Change type
+      options:
+        - New provider
+        - New model in existing provider
+        - Alias mapping update
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Provider slug
+      placeholder: openai
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model id
+      placeholder: gpt-4.1-mini
+      description: Leave empty for provider-only proposals.
+    validations:
+      required: false
+  - type: input
+    id: source_url
+    attributes:
+      label: Official pricing URL
+      placeholder: https://example.com/pricing
+    validations:
+      required: true
+  - type: input
+    id: last_verified
+    attributes:
+      label: Last verified date (YYYY-MM-DD)
+      placeholder: 2026-02-23
+    validations:
+      required: true
+  - type: textarea
+    id: pricing_details
+    attributes:
+      label: Proposed pricing details
+      description: Include dimensions and rates (per_1m or per_unit).
+      placeholder: |
+        input_tokens_uncached: per_1m 0.8000
+        output_tokens: per_1m 3.2000
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I verified the source is official and current.
+          required: true
+        - label: I can open a PR for this change.
+          required: false
