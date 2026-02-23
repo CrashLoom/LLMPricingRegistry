@@ -2,11 +2,11 @@
 
 Open-source versioned pricing registry and deterministic cost estimation API for LLM usage billing.
 
-54 models · 9 providers · Decimal-precise arithmetic · Zero database
+61 models · 10 providers · Decimal-precise arithmetic · Zero database
 
 ## Providers
 
-OpenAI · Anthropic · Google · DeepSeek · xAI · Groq · Kimi · OpenRouter · AWS Bedrock
+OpenAI · Anthropic · Google · Vertex AI · DeepSeek · xAI · Groq · Kimi · OpenRouter · AWS Bedrock
 
 ## Stack
 
@@ -85,6 +85,7 @@ curl -X POST http://localhost:8080/v1/estimate \
 | `POST` | `/v1/estimate/batch`                            | Up to 100 estimates, partial success |
 | `GET`  | `/v1/providers`                                 | List providers and capabilities      |
 | `GET`  | `/v1/models?provider=openai&include_rates=true` | List models with optional rates      |
+| `GET`  | `/v1/models/{provider}/{model}`                 | Full pricing details for one model   |
 | `GET`  | `/v1/versions`                                  | Current pricing version              |
 
 ### Override rates
