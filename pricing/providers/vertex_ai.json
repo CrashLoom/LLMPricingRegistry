@@ -1,0 +1,118 @@
+{
+  "provider": "vertex_ai",
+  "source": {
+    "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+    "last_verified": "2026-02-23"
+  },
+  "models": [
+    {
+      "model": "gemini-2.0-flash-lite",
+      "effective_from": "2026-02-23",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.0750" },
+        "output_tokens": { "per_1m": "0.3000" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Gemini 2.0 Flash-Lite"
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "effective_from": "2026-02-23",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.1500" },
+        "output_tokens": { "per_1m": "0.6000" }
+      },
+      "capabilities": ["token_pricing"],
+      "metadata": {
+        "source_label": "Gemini 2.0 Flash"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash-lite",
+      "effective_from": "2026-02-23",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.1000" },
+        "input_tokens_cached": { "per_1m": "0.0100" },
+        "output_tokens": { "per_1m": "0.4000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Gemini 2.5 Flash-Lite"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "effective_from": "2026-02-23",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.3000" },
+        "input_tokens_cached": { "per_1m": "0.0300" },
+        "output_tokens": { "per_1m": "2.5000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Gemini 2.5 Flash"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "effective_from": "2026-02-23",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "1.2500" },
+        "input_tokens_cached": { "per_1m": "0.1250" },
+        "output_tokens": { "per_1m": "10.0000" }
+      },
+      "pricing_tiers": [
+        {
+          "condition": { "dimension": "context_tokens", "gt": 200000 },
+          "billable": {
+            "input_tokens_uncached": { "per_1m": "2.5000" },
+            "input_tokens_cached": { "per_1m": "0.2500" },
+            "output_tokens": { "per_1m": "15.0000" }
+          }
+        }
+      ],
+      "capabilities": ["token_pricing", "cached_input", "context_tier"],
+      "metadata": {
+        "source_label": "Gemini 2.5 Pro"
+      }
+    },
+    {
+      "model": "gemini-3-flash-preview",
+      "effective_from": "2026-02-23",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.5000" },
+        "input_tokens_cached": { "per_1m": "0.0500" },
+        "output_tokens": { "per_1m": "3.0000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "Gemini 3 Flash Preview"
+      }
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "effective_from": "2026-02-23",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "2.0000" },
+        "input_tokens_cached": { "per_1m": "0.2000" },
+        "output_tokens": { "per_1m": "12.0000" }
+      },
+      "pricing_tiers": [
+        {
+          "condition": { "dimension": "context_tokens", "gt": 200000 },
+          "billable": {
+            "input_tokens_uncached": { "per_1m": "4.0000" },
+            "input_tokens_cached": { "per_1m": "0.4000" },
+            "output_tokens": { "per_1m": "18.0000" }
+          }
+        }
+      ],
+      "capabilities": ["token_pricing", "cached_input", "context_tier"],
+      "metadata": {
+        "source_label": "Gemini 3.1 Pro Preview"
+      }
+    }
+  ]
+}

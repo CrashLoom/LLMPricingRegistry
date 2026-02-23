@@ -5,6 +5,10 @@
     "bedrock": "aws_bedrock",
     "aws-bedrock": "aws_bedrock",
     "amazon-bedrock": "aws_bedrock",
-    "aws bedrock": "aws_bedrock"
+    "aws bedrock": "aws_bedrock",
+    "vertex": "vertex_ai",
+    "vertex-ai": "vertex_ai",
+    "google-vertex": "vertex_ai",
+    "google-vertex-ai": "vertex_ai"
   }
 }
