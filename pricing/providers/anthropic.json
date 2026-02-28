@@ -6,7 +6,7 @@
   },
   "models": [
     {
-      "model": "claude-haiku-4.5",
+      "model": "claude-haiku-4-5",
       "effective_from": "2026-02-22",
       "billable": {
         "input_tokens_uncached": { "per_1m": "1.0000" },
@@ -19,7 +19,7 @@
       }
     },
     {
-      "model": "claude-opus-4.5",
+      "model": "claude-opus-4-5",
       "effective_from": "2026-02-22",
       "billable": {
         "input_tokens_uncached": { "per_1m": "15.0000" },
@@ -32,7 +32,7 @@
       }
     },
     {
-      "model": "claude-opus-4.6",
+      "model": "claude-opus-4-6",
       "effective_from": "2026-02-22",
       "billable": {
         "input_tokens_uncached": { "per_1m": "5.0000" },
@@ -45,7 +45,7 @@
       }
     },
     {
-      "model": "claude-sonnet-4.5",
+      "model": "claude-sonnet-4-5",
       "effective_from": "2026-02-22",
       "billable": {
         "input_tokens_uncached": { "per_1m": "3.0000" },
@@ -58,7 +58,7 @@
       }
     },
     {
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-4-6",
       "effective_from": "2026-02-22",
       "billable": {
         "input_tokens_uncached": { "per_1m": "3.0000" },
