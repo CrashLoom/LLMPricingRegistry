@@ -24,7 +24,7 @@ def test_estimate_endpoint() -> None:
 
     assert response.status_code == 200
     payload = response.json()
-    assert payload["pricing_version"] == "2026-02-22"
+    assert payload["pricing_version"] == "2026-03-25"
     assert payload["model"] == "gpt-4.1-mini"
     assert payload["total"]["cost"] == "0.002240"
 
@@ -93,7 +93,7 @@ def test_batch_endpoint_partial_success() -> None:
 
     assert response.status_code == 200
     payload = response.json()
-    assert payload["pricing_version"] == "2026-02-22"
+    assert payload["pricing_version"] == "2026-03-25"
     assert len(payload["results"]) == 1
     assert len(payload["errors"]) == 1
     assert payload["errors"][0]["error"]["code"] == "MODEL_NOT_FOUND"
@@ -131,7 +131,7 @@ def test_versions_endpoint() -> None:
 
     assert response.status_code == 200
     payload = response.json()
-    assert payload == {"pricing_version": "2026-02-22"}
+    assert payload == {"pricing_version": "2026-03-25"}
 
 
 def test_providers_endpoint_contains_expanded_registry() -> None:

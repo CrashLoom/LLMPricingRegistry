@@ -33,7 +33,7 @@ def test_estimate_openai_gpt_41_mini() -> None:
         },
     )
 
-    assert result.pricing_version == "2026-02-22"
+    assert result.pricing_version == "2026-03-25"
     assert result.total_cost == "0.002240"
     assert len(result.breakdown) == 3
 
@@ -48,8 +48,8 @@ def test_alias_resolution() -> None:
         usage={"input_tokens_uncached": 1_000_000},
     )
 
-    assert result.model == "gpt-5.2"
-    assert result.total_cost == "1.750000"
+    assert result.model == "gpt-5.4"
+    assert result.total_cost == "2.500000"
 
 
 def test_provider_alias_resolution_for_xai() -> None:

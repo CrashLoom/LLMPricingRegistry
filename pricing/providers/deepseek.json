@@ -22,17 +22,30 @@
     },
     {
       "model": "deepseek-reasoner",
-      "effective_from": "2026-02-22",
+      "effective_from": "2026-03-25",
       "billable": {
-        "input_tokens_uncached": { "per_1m": "0.2800" },
-        "input_tokens_cached": { "per_1m": "0.0280" },
-        "output_tokens": { "per_1m": "0.4200" }
+        "input_tokens_uncached": { "per_1m": "0.5500" },
+        "input_tokens_cached": { "per_1m": "0.0550" },
+        "output_tokens": { "per_1m": "2.1900" }
       },
       "capabilities": ["token_pricing", "cached_input"],
       "metadata": {
         "source_label": "DeepSeek R1-0528",
         "discount_window_utc": "16:30-00:30",
         "discount_applies_to": "input_tokens_uncached"
+      }
+    },
+    {
+      "model": "deepseek-v4",
+      "effective_from": "2026-03-25",
+      "billable": {
+        "input_tokens_uncached": { "per_1m": "0.3000" },
+        "input_tokens_cached": { "per_1m": "0.0300" },
+        "output_tokens": { "per_1m": "0.5000" }
+      },
+      "capabilities": ["token_pricing", "cached_input"],
+      "metadata": {
+        "source_label": "DeepSeek V4"
       }
     }
   ]

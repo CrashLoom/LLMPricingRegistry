@@ -6,7 +6,7 @@
   },
   "models": [
     {
-      "model": "anthropic/claude-sonnet-4.6",
+      "model": "anthropic/claude-sonnet-4-6",
       "effective_from": "2026-02-22",
       "billable": {
         "input_tokens_uncached": { "per_1m": "3.0000" },
