@@ -2,7 +2,7 @@
   "provider": "openrouter",
   "source": {
     "url": "https://openrouter.ai/api/v1/models",
-    "last_verified": "2026-02-22"
+    "last_verified": "2026-03-25"
   },
   "models": [
     {
