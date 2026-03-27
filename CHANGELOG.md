@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.5.1...v0.6.0) (2026-03-27)
+
+
+### Features
+
+* Add new models for gpt5 and update prices ([#17](https://github.com/CrashLoom/LLMPricingRegistry/issues/17)) ([92e46e5](https://github.com/CrashLoom/LLMPricingRegistry/commit/92e46e53157292cc3929c6a700c84b01be1f64d1))
+
 ## [0.5.1](https://github.com/CrashLoom/LLMPricingRegistry/compare/v0.5.0...v0.5.1) (2026-02-28)
 
 
